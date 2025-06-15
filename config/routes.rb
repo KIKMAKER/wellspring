@@ -9,4 +9,28 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  get 'drops', to: 'pages#drops'
+
+  resources :deliveries, only: [:index]
+  resources :invoices, only: [:show]
+
+  namespace :driver do
+    resource :dashboard, only: :show
+    resources :delivery_days, only: [:show] do
+      member do
+        patch :start_day
+        patch :end_day
+      end
+    end
+  end
+
+  namespace :admin do
+    resources :users
+    resources :delivery_days do
+      resources :deliveries, only: [:index, :edit, :update]
+    end
+    resources :invoices, only: [:index, :show]
+    resources :payments, only: [:index, :show]
+  end
 end
