@@ -10,9 +10,64 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_06_15_181544) do
+ActiveRecord::Schema[7.1].define(version: 2025_06_15_190937) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "deliveries", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "delivery_day_id", null: false
+    t.boolean "paid"
+    t.boolean "bundle"
+    t.boolean "completed"
+    t.datetime "delivered_at"
+    t.string "customer_note"
+    t.bigint "payment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["delivery_day_id"], name: "index_deliveries_on_delivery_day_id"
+    t.index ["payment_id"], name: "index_deliveries_on_payment_id"
+    t.index ["user_id"], name: "index_deliveries_on_user_id"
+  end
+
+  create_table "delivery_days", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.date "date"
+    t.integer "capacity", default: 20
+    t.integer "filled_slots", default: 0
+    t.integer "start_kms"
+    t.integer "end_kms"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string "note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_delivery_days_on_user_id"
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "snapscan_id"
+    t.string "status"
+    t.integer "total_amount"
+    t.integer "tip_amount"
+    t.integer "fee_amount"
+    t.integer "settle_amount"
+    t.datetime "paid_at"
+    t.string "user_reference"
+    t.string "merchant_reference"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_payments_on_user_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.float "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +77,20 @@ ActiveRecord::Schema[7.1].define(version: 2025_06_15_181544) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "phone_number"
+    t.string "secondary_phone_number"
+    t.string "address"
+    t.integer "role", default: 0
+    t.datetime "container_paid_at"
+    t.string "customer_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "deliveries", "delivery_days"
+  add_foreign_key "deliveries", "payments"
+  add_foreign_key "deliveries", "users"
+  add_foreign_key "delivery_days", "users"
+  add_foreign_key "payments", "users"
 end
