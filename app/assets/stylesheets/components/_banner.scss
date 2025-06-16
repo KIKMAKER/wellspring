@@ -1,0 +1,34 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.banner h1 {
+  margin: 0.5rem;
+  color: $beige;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.banner p {
+  margin: 0.5rem;
+  font-size: 2rem;
+  color: $beige;
+  opacity: .5;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.sage-banner {
+  background-color: $sage;
+  width: 100vw;
+  padding: 2rem;
+  text-align: center;
+  h1, h2, p {
+    color: $beige
+  }
+  h1 {
+    margin: 2rem auto
+  }
+}

@@ -15,10 +15,14 @@
 body {
     background-color: $beige;
     color: $beige;
-  }
-    body, h1, h2, h3, p {
-    margin: 0;
-    color: $sage;
+    margin-bottom: 4rem;
+    h1, h2, h3, p {
+     margin: 0;
+     color: $sage;
+   }
+   h1 {
+    font-size: 3rem;
+   }
   }
   ul {
     padding: 0;

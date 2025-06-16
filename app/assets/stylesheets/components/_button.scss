@@ -1,0 +1,33 @@
+.btn-beige {
+  color: $sage;
+  border: 1px solid $sage;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  // opacity: 0.6;
+  transition: opacity 0.3s ease;
+  background-color: $beige;
+  font-family: $button-font;
+}
+
+.btn-beige:hover {
+  opacity: 1;
+  color: $beige
+}
+
+.btn-sage {
+  color: $beige;
+  border: 1px solid $beige;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  // opacity: 0.6;
+  transition: opacity 0.3s ease;
+  background-color: $sage;
+  font-family: $button-font;
+}
+
+.btn-sage:hover {
+  opacity: 1;
+    color: $sage
+}

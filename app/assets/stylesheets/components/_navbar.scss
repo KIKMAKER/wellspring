@@ -1,12 +1,37 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
-}
+  background: $beige;
+  opacity: 1;
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+  @media (max-width: 576px) {
+    // Stick the navbar to the bottom
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    li {
+      font-size: 12px;
+    }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  }
 }
+  .navbar-lewagon .navbar-collapse {
+    flex-grow: 0;
+  }
+
+  .navbar-lewagon .navbar-brand img {
+    width: 128px;
+  }
+
+  .footer-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    flex-grow: 1;
+
+    width: 60%;
+    a {
+      font-size: 1rem;
+    }
+  }

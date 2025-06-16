@@ -1,2 +1,46 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/736x/c1/f1/65/c1f165b4ca86728d7970da8ef74972f2.jpg);">
+  <div class="container">
+    <h1 class="my-2">Weekly water delivery from Newlands Spring to your home.</h1>
+    <p>Pure. Alive. Sacred.</p>
+    <%= link_to 'JOIN THE FLOW', new_user_registration_path, class: 'btn btn-beige'  %>
+    <!--<a class="btn btn-beige my-2" href="#">JOIN THE FLOW</a>-->
+  </div>
+</div>
+<div class="container">
+  <h1 class="text-center my-5">How Wellspring Works</h1>
+</div>
+<div class="card_container">
+
+  <div class="home_card">
+    <%= image_tag 'water_container.png' %>
+    <br>
+    <h1>Begin with the source</h1>
+    <p>Sign up once and receive your reusable container — R300 setup.</p>
+  </div>
+
+  <div class="home_card">
+    <%= image_tag 'delivery_calendar.png' %>
+    <br>
+    <h1>Choose your flow</h1>
+    <p>
+      R210 per delivery<br>
+      R600 for four consecutive weeks<br>
+      (first come, first served)
+    </p>
+  </div>
+
+  <div class="home_card">
+    <%= image_tag 'receive_hands.png' %>
+    <br>
+    <h1>Receive the mountain</h1>
+    <p>
+      Each Monday we bring spring water to your door<br>
+      (swop an empty for a full)
+    </p>
+  </div>
+</div>
+<div class="sage-banner">
+  <h1>Ready to love water?</h1>
+    <%= link_to 'SIGN UP', new_user_registration_path, class: 'btn btn-sage mb-3'  %>
+
+</div>

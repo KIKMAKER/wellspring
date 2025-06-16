@@ -1,0 +1,40 @@
+.home_card {
+  border-radius: 16px;
+  border: 2px solid $sage;
+  text-align: center;
+  padding: 2rem;
+  width: 50%;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  h1 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  img {
+    width: 40%;
+  }
+}
+
+
+@media (max-width: 960px) {
+  .home_card {
+    width: 100%;
+  }
+}
+@media (max-width: 720px) {
+  .home_card{
+    width: 100%;
+  }
+}
+@media (max-width: 540px) {
+  .home_card {
+    width: 100%;
+  }
+}
