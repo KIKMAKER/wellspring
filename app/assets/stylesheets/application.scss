@@ -5,7 +5,8 @@
 
 // External libraries
 @import "bootstrap";
-@import "font-awesome";
+@import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
+@import url("https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css");
 
 // Your CSS partials
 @import "components/index";
@@ -22,6 +23,10 @@ body {
    }
    h1 {
     font-size: 3rem;
+    margin: 1rem 0;
+   }
+   h2 {
+    font-size: 2rem;
    }
   }
   ul {
@@ -30,4 +35,5 @@ body {
   a {
     text-decoration: none;
     display: inline-block;
+    color: $red;
   }

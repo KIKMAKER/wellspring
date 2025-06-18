@@ -4,7 +4,7 @@
   text-align: center;
   padding: 2rem;
   width: 50%;
-  margin: 1rem auto;
+  margin: 0rem 1rem 3rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -26,15 +26,18 @@
 @media (max-width: 960px) {
   .home_card {
     width: 100%;
+    margin: 1rem auto
   }
 }
 @media (max-width: 720px) {
   .home_card{
     width: 100%;
+    margin: 1rem 0rem
   }
 }
 @media (max-width: 540px) {
   .home_card {
     width: 100%;
+    margin: 1rem 0rem
   }
 }

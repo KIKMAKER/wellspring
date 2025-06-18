@@ -3,6 +3,7 @@
   width: 90%;
   margin: 0 auto;
   display: flex;
+
 }
 
 .card_container p {
@@ -22,19 +23,19 @@
 
 @media (max-width: 960px) {
   .card_container {
-    width: 700px;
+    width: 60%;
     flex-direction: column;
   }
 }
 @media (max-width: 720px) {
   .card_container{
-    width: 500px;
+    width: 70%;
     flex-direction: column;
   }
 }
 @media (max-width: 540px) {
   .card_container {
-    width: 300px;
+    width: 70%;
     flex-direction: column;
   }
   .card {
